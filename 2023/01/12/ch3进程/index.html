@@ -9,7 +9,7 @@
     
     <title>
         
-            ch1导论 |
+            ch3进程 |
         
         Ziheng&#39;s blog
     </title>
@@ -196,7 +196,7 @@
     <div class="post-page-container">
         <div class="article-content-container">
             <div class="article-title">
-                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">ch1导论</h1></span>
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">ch3进程</h1></span>
             </div>
 
             
@@ -215,8 +215,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-01-08 20:41:44</span>
-        <span class="mobile">2023-01-08 20:41</span>
+        <span class="pc">2023-01-12 17:15:44</span>
+        <span class="mobile">2023-01-12 17:15</span>
     </span>
     
     
@@ -237,62 +237,39 @@
             
 
             <div class="article-content markdown-body">
-                <h2 id="1、计算机系统的组成"><a href="#1、计算机系统的组成" class="headerlink" title="1、计算机系统的组成"></a>1、计算机系统的组成</h2><p>硬件，操作系统，系统程序和应用程序，用户</p>
+                <h2 id="1、进程"><a href="#1、进程" class="headerlink" title="1、进程"></a>1、进程</h2><p>进程是执行中的应用程序，进程不只是程序代码，还包括当前活动。包括：<strong>代码段、数据段(全局变量)、堆(动态分配的内存)、栈(临时数据：如局部变量、函数参数、返回地址)、还有PC(程序计数器)和一些寄存器</strong></p>
+<h2 id="2、进程的状态和转换条件"><a href="#2、进程的状态和转换条件" class="headerlink" title="2、进程的状态和转换条件"></a>2、进程的状态和转换条件</h2><p>一次只有一个进程在处理器上可运行，多个进程可处于就绪或者等待状态</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230107155457168.png"
-                      alt="image-20230107155457168"
+                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230111173147509.png"
+                      alt="image-20230111173147509"
                 ></p>
-<h2 id="2、操作系统的概念"><a href="#2、操作系统的概念" class="headerlink" title="2、操作系统的概念"></a>2、操作系统的概念</h2><p><strong>1、操作系统的定义（对下管理、对上服务）</strong></p>
-<p>操作系统是<strong>一组</strong>管理计算机硬件和软件资源、合理地堆各类作业进行调度，以及方便用户的<strong>程序集合</strong>。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。</p>
-<h2 id="3、操作系统的类型"><a href="#3、操作系统的类型" class="headerlink" title="3、操作系统的类型"></a>3、操作系统的类型</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230108203654910.png"
-                      alt="image-20230108203654910"
-                ></p>
-<h2 id="4、中断和陷阱"><a href="#4、中断和陷阱" class="headerlink" title="4、中断和陷阱"></a>4、中断和陷阱</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230107161606028.png"
-                      alt="image-20230107161606028"
-                ></p>
+<h2 id="3、PCB-Process-Control-Block"><a href="#3、PCB-Process-Control-Block" class="headerlink" title="3、PCB (Process Control Block)"></a>3、PCB (Process Control Block)</h2><p><strong>1、什么是PCB</strong></p>
+<p>是系统为了管理进程专门设计的数据结构，用来记录进程的<strong>外部特征</strong>，描述进程的运动变化过程。PCB是进程存在的唯一标志，操作系统通过PCB而感知进程的存在。</p>
+<p><strong>2、PCB包含的信息</strong></p>
+<p>进程状态、PC、寄存器、CPU调度信息、内存管理信息、IO状态信息等</p>
+<h2 id="4、进程的创建和撤销"><a href="#4、进程的创建和撤销" class="headerlink" title="4、进程的创建和撤销"></a>4、进程的创建和撤销</h2><p><strong>1、进程的创建</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230107161740195.png?token=A42HVD6UFIEP55PTSGOEVGDDXEVOA"
-                      alt="image-20230107161740195"
+                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230111184710254.png"
+                      alt="image-20230111184710254"
                 ></p>
-<h2 id="5、特权指令、用户态和内核态"><a href="#5、特权指令、用户态和内核态" class="headerlink" title="5、特权指令、用户态和内核态"></a>5、特权指令、用户态和内核态</h2><p><strong>1、系统态（核心态，管态）与用户态（目态）的概念以及处理器设置两个态的目的</strong></p>
+<p><strong>2、进程的撤销</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230107164537548.png?token=A42HVD4MNUVGHHZX2HBXB3LDXEYW2"
-                      alt="image-20230107164537548"
+                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230111185346791.png"
+                      alt="image-20230111185346791"
                 ></p>
-<p><strong>2、基于CPU提供的两个态说明对cpu、I&#x2F;O、memory的保护的目的及其保护措施</strong></p>
+<h2 id="5、进程通信"><a href="#5、进程通信" class="headerlink" title="5、进程通信"></a>5、进程通信</h2><p><strong>1、进程协作的优点</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230107170659151.png?token=A42HVD3RXW22WWFJ7V4EOSLDXE3G6"
-                      alt="image-20230107170659151"
+                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230111190053084.png"
+                      alt="image-20230111190053084"
                 ></p>
-<h2 id="6、操作系统的加载"><a href="#6、操作系统的加载" class="headerlink" title="6、操作系统的加载"></a>6、操作系统的加载</h2><p><strong>1、系统加载过程分成哪几个阶段？这种分阶段过程优点何在？</strong></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230107171229033.png"
-                      alt="image-20230107171229033"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230107171253259.png"
-                      alt="image-20230107171229033"
-                ></p>
-<h2 id="7、其他"><a href="#7、其他" class="headerlink" title="7、其他"></a>7、其他</h2><p><strong>1、一般情况下，操作系统尽量提高资源的利用率及提高运行效率，但有时也违反这一原则。请举例并加以说明。</strong></p>
-<p>当计算机运行对配置要求很高的大型程序时，例如大型游戏，用户追求的是画面的极度精美而不是为了机器运行流畅而选择较低的画质，这对机器的资源开销量就变得更大，机器运行效率也会变低。但是这并不是浪费资源，是正常现象。</p>
 
             </div>
 
@@ -303,29 +280,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                            rel="prev"
-                            href="/2023/01/12/ch2%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"
-                            >
-                                <span class="left arrow-icon flex-center">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </span>
-                                <span class="title flex-center">
-                                    <span class="post-nav-title-item">ch2操作系统结构</span>
-                                    <span class="post-nav-item">Prev posts</span>
-                                </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/2022/12/18/personal-resume/"
+                            href="/2023/01/12/ch2%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">personal resume</span>
+                                    <span class="post-nav-title-item">ch2操作系统结构</span>
                                     <span class="post-nav-item">Next posts</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">
@@ -345,7 +307,7 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-text">1、计算机系统的组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">2、操作系统的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-text">3、操作系统的类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E4%B8%AD%E6%96%AD%E5%92%8C%E9%99%B7%E9%98%B1"><span class="nav-text">4、中断和陷阱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E7%89%B9%E6%9D%83%E6%8C%87%E4%BB%A4%E3%80%81%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E5%86%85%E6%A0%B8%E6%80%81"><span class="nav-text">5、特权指令、用户态和内核态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8A%A0%E8%BD%BD"><span class="nav-text">6、操作系统的加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7%E3%80%81%E5%85%B6%E4%BB%96"><span class="nav-text">7、其他</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E8%BF%9B%E7%A8%8B"><span class="nav-text">1、进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E5%92%8C%E8%BD%AC%E6%8D%A2%E6%9D%A1%E4%BB%B6"><span class="nav-text">2、进程的状态和转换条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81PCB-Process-Control-Block"><span class="nav-text">3、PCB (Process Control Block)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%92%A4%E9%94%80"><span class="nav-text">4、进程的创建和撤销</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="nav-text">5、进程通信</span></a></li></ol>
     </div>
 </div>
             </div>
