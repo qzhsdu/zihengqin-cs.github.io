@@ -9,7 +9,7 @@
     
     <title>
         
-            ch4线程 |
+            ch10&amp;ch11文件系统 |
         
         Ziheng&#39;s blog
     </title>
@@ -196,7 +196,7 @@
     <div class="post-page-container">
         <div class="article-content-container">
             <div class="article-title">
-                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">ch4线程</h1></span>
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">ch10&amp;ch11文件系统</h1></span>
             </div>
 
             
@@ -215,8 +215,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-02-12 17:00:44</span>
-        <span class="mobile">2023-02-12 17:00</span>
+        <span class="pc">2023-02-12 17:03:44</span>
+        <span class="mobile">2023-02-12 17:03</span>
     </span>
     
     
@@ -237,94 +237,130 @@
             
 
             <div class="article-content markdown-body">
-                <h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><p><strong>1、结合下图，说明什么是线程</strong></p>
-<img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113222556076.png"
-                      alt="image-20230113222556076" style="zoom: 67%;" 
-                >
-
+                <h1 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h1><h2 id="文件、文件目录"><a href="#文件、文件目录" class="headerlink" title="文件、文件目录"></a>文件、文件目录</h2><p><strong>文件的定义</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113220943018.png"
-                      alt="image-20230113220943018"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230120113429608.png"
+                      alt="image-20230120113429608"
                 ></p>
-<p><strong>2、为什么要引入线程</strong></p>
+<h2 id="文件的类型的作用"><a href="#文件的类型的作用" class="headerlink" title="文件的类型的作用"></a>文件的类型的作用</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230120161946817.png"
+                      alt="image-20230120161946817"
+                ></p>
+<h2 id="文件的物理格式化和逻辑格式化"><a href="#文件的物理格式化和逻辑格式化" class="headerlink" title="文件的物理格式化和逻辑格式化"></a>文件的物理格式化和逻辑格式化</h2><p><strong>物理格式化</strong></p>
+<ul>
+<li><p>将一个混沌的磁盘表面划分成磁道与扇区等结构；</p>
+</li>
+<li><p>确定磁盘扇区校验码所占位数等</p>
+</li>
+</ul>
+<p><strong>逻辑格式化Format ：在磁盘分区上创建文件系统</strong></p>
+<ul>
+<li><p>一般先将磁盘分区，然后对每个分区逻辑格式化</p>
+</li>
+<li><p>分区(fdisk)：建立分区表，创建主引导记录（扇区）</p>
+</li>
+</ul>
+<p><strong>逻辑格式化Format做了哪些工作？</strong></p>
+<ul>
+<li><p><strong>划分</strong>磁盘的逻辑块：将一定的扇区组织成磁盘的逻辑块；</p>
+</li>
+<li><p><strong>创建</strong>文件系统：</p>
+<ul>
+<li><p>建立文件系统在<strong>磁盘上的</strong>布局；</p>
+</li>
+<li><p>建立文件系统所使用的<strong>数据结构</strong>，如引导块、超级块、目录表、</p>
+<p>FCB表(索引结点表)、文件分配表(如FAT)、空闲块索引表等；</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="便于共享的目录结构有哪些？说明其基本思想及特点。"><a href="#便于共享的目录结构有哪些？说明其基本思想及特点。" class="headerlink" title="便于共享的目录结构有哪些？说明其基本思想及特点。"></a>便于共享的目录结构有哪些？说明其基本思想及特点。</h2><p>目录结构总共有：单层目录、双层目录、树状目录、无环图目录、通用图目录</p>
+<p>便于共享的目录结构：无环图目录、通用图目录</p>
+<h2 id="说明文件卷安装与卸载的思想及其作用"><a href="#说明文件卷安装与卸载的思想及其作用" class="headerlink" title="说明文件卷安装与卸载的思想及其作用"></a>说明文件卷安装与卸载的思想及其作用</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230120221932402.png"
+                      alt="image-20230120221932402"
+                ></p>
+<h2 id="文件的共享与保护概念及措施"><a href="#文件的共享与保护概念及措施" class="headerlink" title="文件的共享与保护概念及措施"></a>文件的共享与保护概念及措施</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230120222324997.png"
+                      alt="image-20230120222324997"
+                ></p>
+<h2 id="文件目录的作用和实现方法"><a href="#文件目录的作用和实现方法" class="headerlink" title="文件目录的作用和实现方法"></a>文件目录的作用和实现方法</h2><p><strong>文件目录—文件系统实现对文件的按名存取</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master//typora_imgs/image-20230113212542225.png"
-                      alt="image-20230113212542225"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230120113543789.png"
+                      alt="image-20230120113543789"
                 ></p>
-<p><strong>3、比较进程和线程</strong></p>
+<p><strong>两种目录表</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master//typora_imgs/image-20230113213533334.png"
-                      alt="image-20230113213533334"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230124174328186.png"
+                      alt="image-20230124174328186"
                 ></p>
-<p><strong>4、用户级线程与内核级线程的概念，以及他们的优缺点。</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113222336995.png"
-                      alt="image-20230113222336995"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230124174345517.png"
+                      alt="image-20230124174345517"
                 ></p>
-<p><strong>4、用户线程与核心线程之间有哪些映射模型？说明其原理及特点。</strong></p>
-<center class="half">    
-    <img  
+<p>要点：将FCB与文件名分开，目录表简单，便于文件共享（操作文件时获取的是指向FCB的指针而不是文件的具体内容）</p>
+<h2 id="文件操作系统调用的实现"><a href="#文件操作系统调用的实现" class="headerlink" title="*文件操作系统调用的实现"></a>*文件操作系统调用的实现</h2><p><strong>open</strong></p>
+<p>用户给open传入一个人文件的<strong>逻辑路径名</strong>，这时先将<strong>文件系统的目录结构加载进内存</strong>，根据文件名OS首先对<strong>系统范围内打开的文件表</strong>进行搜索。若该文件已经被其他进程打开了，则直接将该<strong>进程的打开文件表的指针</strong>指向系统范围打开文件表的这一项，同时，<strong>系统打开文件表该文件的引用数+1</strong>.</p>
+<p>如果该文件在系统范围内的文件表中不存在，说明该文件第一次打开，则对该文件系统的目录表进行搜索，依次查找叶节点，返回该文件的inode号，维护<strong>系统范围打开文件表</strong>和<strong>进程的打开文件表</strong></p>
+<p><strong>read()</strong></p>
+<p>通过open()找到该文件的inode物理位置指针，将FCB装入内存，通过FCB的信息计算处数据块的存储地址，将数据块装入即可完成read()操作</p>
+<h2 id="VFS的概念、原理及作用"><a href="#VFS的概念、原理及作用" class="headerlink" title="VFS的概念、原理及作用"></a>VFS的概念、原理及作用</h2><p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113221711756.png"
-                      width="300"
-                >    
-    <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113230717056.png"
-                      width="300"
-                > 
-</center> 
-![](https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113230844855.png)
-
-<p><strong>一对一</strong></p>
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230125120310296.png"
+                      alt="image-20230125120310296"
+                ></p>
+<h2 id="说明几种文件分配方式的思想、特点，并掌握相关的计算。"><a href="#说明几种文件分配方式的思想、特点，并掌握相关的计算。" class="headerlink" title="*说明几种文件分配方式的思想、特点，并掌握相关的计算。"></a>*说明几种文件分配方式的思想、特点，并掌握相关的计算。</h2><h3 id="几种文件分配的思想"><a href="#几种文件分配的思想" class="headerlink" title="几种文件分配的思想"></a>几种文件分配的思想</h3><p><strong>连续分配：</strong>文件在磁盘上占据连续的块</p>
+<p>优点：实现简单，效率高，适用于文件内容不进行变动的情况下</p>
+<p>缺点：难以对文件进行扩展，需要提前声明大小；产生外碎片。</p>
+<p><strong>链接分配：</strong>每个文件是磁盘块的链表，磁盘块分布在磁盘的任何地方</p>
+<p>优点：实现简单，没有外碎片问题，文件可扩展</p>
+<p>缺点：每个文件快都有指针，占用空间；无法实现随机存取；可靠性差（一个中间数据块指针的丢失会导致链的断裂）。</p>
+<p> <strong>加入文件分配表(File Allocation Table, FAT)的链接分配改进版</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113231430224.png"
-                      alt="image-20230113231430224"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230125175341123.png"
+                      alt="image-20230125175341123"
                 ></p>
-<center class="half">    
-    <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113231730093.png"
-                      width="300"
-                >    
-    <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113231823355.png"
-                      width="300"
-                > 
-</center> 
-
-
-
-<p><strong>多对多</strong></p>
+<p><strong>索引分配</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113232310577.png"
-                      alt="image-20230113232310577"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230125182504306.png"
+                      alt="image-20230125182504306"
                 ></p>
-<p><strong>二级模型</strong></p>
-<p>在多对多的基础上允许将一个用户线程绑定到某个内核线程上</p>
-<p><strong>5、根据映射模型，分析一些问题（如例题等）</strong></p>
-<p><strong>6、线程对进程资源的共享（pthread的几个例子）</strong></p>
-
+<p>索引块多于一块的解决方案：索引块链表</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230125183531121.png"
+                      alt="image-20230125183531121"
+                ></p>
+<h3 id="逻辑地址到物理地址的映射；"><a href="#逻辑地址到物理地址的映射；" class="headerlink" title="逻辑地址到物理地址的映射；"></a>逻辑地址到物理地址的映射；</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230125172623846.png"
+                      alt="image-20230125172623846"
+                ></p>
+<h3 id="所需FAT表、索引块等所占磁盘块数的计算等；"><a href="#所需FAT表、索引块等所占磁盘块数的计算等；" class="headerlink" title="*所需FAT表、索引块等所占磁盘块数的计算等；"></a>*所需FAT表、索引块等所占磁盘块数的计算等；</h3><h2 id="说明几种磁盘空闲空间的管理方法的思想及特点-优点及缺点-，并掌握相关的计算。"><a href="#说明几种磁盘空闲空间的管理方法的思想及特点-优点及缺点-，并掌握相关的计算。" class="headerlink" title="*说明几种磁盘空闲空间的管理方法的思想及特点(优点及缺点)，并掌握相关的计算。"></a>*说明几种磁盘空闲空间的管理方法的思想及特点(优点及缺点)，并掌握相关的计算。</h2><p><strong>位向量</strong></p>
+<p>如几种文件分配方法所涉及的文件目录表结构、FCB结构等</p>
+<p>如位视图所需磁盘块的计算等；P447: 2,6,10</p>
+<h2 id="为提高文件系统的性能，可采用哪些措施？"><a href="#为提高文件系统的性能，可采用哪些措施？" class="headerlink" title="为提高文件系统的性能，可采用哪些措施？"></a>为提高文件系统的性能，可采用哪些措施？</h2>
             </div>
 
             
@@ -337,13 +373,13 @@
                         <div class="article-prev">
                             <a class="prev"
                             rel="prev"
-                            href="/2023/02/12/ch7%E6%AD%BB%E9%94%81/"
+                            href="/2023/02/12/ch12%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/"
                             >
                                 <span class="left arrow-icon flex-center">
                                     <i class="fa-solid fa-chevron-left"></i>
                                 </span>
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">ch7死锁</span>
+                                    <span class="post-nav-title-item">ch12大容量存储系统</span>
                                     <span class="post-nav-item">Prev posts</span>
                                 </span>
                             </a>
@@ -353,10 +389,10 @@
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/2023/01/12/ch3%E8%BF%9B%E7%A8%8B/"
+                            href="/2023/02/12/ch9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">ch3进程</span>
+                                    <span class="post-nav-title-item">ch9虚拟内存</span>
                                     <span class="post-nav-item">Next posts</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">
@@ -376,7 +412,7 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B"><span class="nav-text">线程</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-text">文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E3%80%81%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95"><span class="nav-text">文件、文件目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-text">文件的类型的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E7%89%A9%E7%90%86%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%92%8C%E9%80%BB%E8%BE%91%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-text">文件的物理格式化和逻辑格式化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%BF%E4%BA%8E%E5%85%B1%E4%BA%AB%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E8%AF%B4%E6%98%8E%E5%85%B6%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3%E5%8F%8A%E7%89%B9%E7%82%B9%E3%80%82"><span class="nav-text">便于共享的目录结构有哪些？说明其基本思想及特点。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E%E6%96%87%E4%BB%B6%E5%8D%B7%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD%E7%9A%84%E6%80%9D%E6%83%B3%E5%8F%8A%E5%85%B6%E4%BD%9C%E7%94%A8"><span class="nav-text">说明文件卷安装与卸载的思想及其作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E5%85%B1%E4%BA%AB%E4%B8%8E%E4%BF%9D%E6%8A%A4%E6%A6%82%E5%BF%B5%E5%8F%8A%E6%8E%AA%E6%96%BD"><span class="nav-text">文件的共享与保护概念及措施</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%9A%84%E4%BD%9C%E7%94%A8%E5%92%8C%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-text">文件目录的作用和实现方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-text">*文件操作系统调用的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VFS%E7%9A%84%E6%A6%82%E5%BF%B5%E3%80%81%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BD%9C%E7%94%A8"><span class="nav-text">VFS的概念、原理及作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E%E5%87%A0%E7%A7%8D%E6%96%87%E4%BB%B6%E5%88%86%E9%85%8D%E6%96%B9%E5%BC%8F%E7%9A%84%E6%80%9D%E6%83%B3%E3%80%81%E7%89%B9%E7%82%B9%EF%BC%8C%E5%B9%B6%E6%8E%8C%E6%8F%A1%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E3%80%82"><span class="nav-text">*说明几种文件分配方式的思想、特点，并掌握相关的计算。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%A0%E7%A7%8D%E6%96%87%E4%BB%B6%E5%88%86%E9%85%8D%E7%9A%84%E6%80%9D%E6%83%B3"><span class="nav-text">几种文件分配的思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80%E5%88%B0%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E7%9A%84%E6%98%A0%E5%B0%84%EF%BC%9B"><span class="nav-text">逻辑地址到物理地址的映射；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%80%E9%9C%80FAT%E8%A1%A8%E3%80%81%E7%B4%A2%E5%BC%95%E5%9D%97%E7%AD%89%E6%89%80%E5%8D%A0%E7%A3%81%E7%9B%98%E5%9D%97%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97%E7%AD%89%EF%BC%9B"><span class="nav-text">*所需FAT表、索引块等所占磁盘块数的计算等；</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E%E5%87%A0%E7%A7%8D%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B2%E7%A9%BA%E9%97%B4%E7%9A%84%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E7%9A%84%E6%80%9D%E6%83%B3%E5%8F%8A%E7%89%B9%E7%82%B9-%E4%BC%98%E7%82%B9%E5%8F%8A%E7%BC%BA%E7%82%B9-%EF%BC%8C%E5%B9%B6%E6%8E%8C%E6%8F%A1%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E3%80%82"><span class="nav-text">*说明几种磁盘空闲空间的管理方法的思想及特点(优点及缺点)，并掌握相关的计算。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E6%8F%90%E9%AB%98%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%80%A7%E8%83%BD%EF%BC%8C%E5%8F%AF%E9%87%87%E7%94%A8%E5%93%AA%E4%BA%9B%E6%8E%AA%E6%96%BD%EF%BC%9F"><span class="nav-text">为提高文件系统的性能，可采用哪些措施？</span></a></li></ol></li></ol>
     </div>
 </div>
             </div>

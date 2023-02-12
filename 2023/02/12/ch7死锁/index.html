@@ -9,7 +9,7 @@
     
     <title>
         
-            Archive: 2022 |
+            ch7死锁 |
         
         Ziheng&#39;s blog
     </title>
@@ -193,97 +193,162 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="archive-container ">
-        
-<div class="archive-list-container">
-    
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2023</span>
-                <span class="archive-year-post-count">[8]</span>
+    <div class="post-page-container">
+        <div class="article-content-container">
+            <div class="article-title">
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">ch7死锁</h1></span>
             </div>
-            <ul class="article-list">
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/02/12/ch12%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/"
-                        >ch12大容量存储系统</a>
-                        <span class="article-date">02-12</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/02/12/ch10-ch11%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/"
-                        >ch10&amp;ch11文件系统</a>
-                        <span class="article-date">02-12</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/02/12/ch9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/"
-                        >ch9虚拟内存</a>
-                        <span class="article-date">02-12</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/02/12/ch7%E6%AD%BB%E9%94%81/"
-                        >ch7死锁</a>
-                        <span class="article-date">02-12</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/02/12/ch4%E7%BA%BF%E7%A8%8B/"
-                        >ch4线程</a>
-                        <span class="article-date">02-12</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/01/12/ch3%E8%BF%9B%E7%A8%8B/"
-                        >ch3进程</a>
-                        <span class="article-date">01-12</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/01/12/ch2%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"
-                        >ch2操作系统结构</a>
-                        <span class="article-date">01-12</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/01/08/ch1%E5%AF%BC%E8%AE%BA/"
-                        >ch1导论</a>
-                        <span class="article-date">01-08</span>
-                    </li>
-                
-            </ul>
-        </section>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Ziheng Qin</span>
+                            
+                                <span class="author-label"></span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-02-12 17:01:44</span>
+        <span class="mobile">2023-02-12 17:01</span>
+    </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2022</span>
-                <span class="archive-year-post-count">[1]</span>
-            </div>
-            <ul class="article-list">
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/12/18/personal-resume/"
-                        >personal resume</a>
-                        <span class="article-date">12-18</span>
-                    </li>
-                
-            </ul>
-        </section>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h2 id="死锁的概念"><a href="#死锁的概念" class="headerlink" title="死锁的概念"></a>死锁的概念</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230202194148915.png"
+                      alt="image-20230202194148915"
+                ></p>
+<h2 id="死锁的四个必要条件"><a href="#死锁的四个必要条件" class="headerlink" title="死锁的四个必要条件"></a>死锁的四个必要条件</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230202194312603.png"
+                      alt="image-20230202194312603"
+                ></p>
+<h2 id="对于死锁问题，可以考虑哪些方法予以解决？"><a href="#对于死锁问题，可以考虑哪些方法予以解决？" class="headerlink" title="对于死锁问题，可以考虑哪些方法予以解决？"></a>对于死锁问题，可以考虑哪些方法予以解决？</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230202194443410.png"
+                      alt="image-20230202194443410"
+                ></p>
+<h2 id="以哲学家就餐为例，说明如何预防死锁。"><a href="#以哲学家就餐为例，说明如何预防死锁。" class="headerlink" title="以哲学家就餐为例，说明如何预防死锁。"></a>以哲学家就餐为例，说明如何预防死锁。</h2><p><strong>破坏循环等待条件</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230202215031565.png"
+                      alt="image-20230202215031565"
+                ></p>
+<h2 id="避免死锁的方法"><a href="#避免死锁的方法" class="headerlink" title="避免死锁的方法"></a>避免死锁的方法</h2><p><strong>1、安全状态法</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230202201233583.png"
+                      alt="image-20230202201233583"
+                ></p>
+<p><strong>2、资源分配图</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230202201455231.png"
+                      alt="image-20230202201455231"
+                ></p>
+<p><strong>3、银行家算法</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230202213148917.png"
+                      alt="image-20230202213148917"
+                ></p>
+<h2 id="死锁的检测与恢复"><a href="#死锁的检测与恢复" class="headerlink" title="死锁的检测与恢复"></a>死锁的检测与恢复</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230202214210247.png"
+                      alt="image-20230202214210247"
+                ></p>
+
+            </div>
+
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2023/02/12/ch9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">ch9虚拟内存</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/02/12/ch4%E7%BA%BF%E7%A8%8B/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">ch4线程</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%BB%E9%94%81%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">死锁的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%BB%E9%94%81%E7%9A%84%E5%9B%9B%E4%B8%AA%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="nav-text">死锁的四个必要条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8E%E6%AD%BB%E9%94%81%E9%97%AE%E9%A2%98%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%80%83%E8%99%91%E5%93%AA%E4%BA%9B%E6%96%B9%E6%B3%95%E4%BA%88%E4%BB%A5%E8%A7%A3%E5%86%B3%EF%BC%9F"><span class="nav-text">对于死锁问题，可以考虑哪些方法予以解决？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E5%93%B2%E5%AD%A6%E5%AE%B6%E5%B0%B1%E9%A4%90%E4%B8%BA%E4%BE%8B%EF%BC%8C%E8%AF%B4%E6%98%8E%E5%A6%82%E4%BD%95%E9%A2%84%E9%98%B2%E6%AD%BB%E9%94%81%E3%80%82"><span class="nav-text">以哲学家就餐为例，说明如何预防死锁。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E6%AD%BB%E9%94%81%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">避免死锁的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%BB%E9%94%81%E7%9A%84%E6%A3%80%E6%B5%8B%E4%B8%8E%E6%81%A2%E5%A4%8D"><span class="nav-text">死锁的检测与恢复</span></a></li></ol>
     </div>
 </div>
+            </div>
+        
+    </div>
+</div>
+
 
                 
 
@@ -352,6 +417,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -427,6 +509,8 @@
 
 
 <div class="post-scripts pjax">
+    
+        <script src="//evan.beee.top/projects/hexo-theme-redefine/v0.4.2/source/js/toc-toggle.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v0.4.2/source/js/libs/anime.min.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v0.4.2/source/js/toc.js"></script>
     
 </div>
 
