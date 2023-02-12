@@ -9,7 +9,7 @@
     
     <title>
         
-            ch3进程 |
+            ch4线程 |
         
         Ziheng&#39;s blog
     </title>
@@ -196,7 +196,7 @@
     <div class="post-page-container">
         <div class="article-content-container">
             <div class="article-title">
-                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">ch3进程</h1></span>
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">ch4线程</h1></span>
             </div>
 
             
@@ -215,8 +215,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-01-12 17:15:44</span>
-        <span class="mobile">2023-01-12 17:15</span>
+        <span class="pc">2023-02-12 17:00:44</span>
+        <span class="mobile">2023-02-12 17:00</span>
     </span>
     
     
@@ -237,39 +237,93 @@
             
 
             <div class="article-content markdown-body">
-                <h2 id="1、进程"><a href="#1、进程" class="headerlink" title="1、进程"></a>1、进程</h2><p>进程是执行中的应用程序，进程不只是程序代码，还包括当前活动。包括：<strong>代码段、数据段(全局变量)、堆(动态分配的内存)、栈(临时数据：如局部变量、函数参数、返回地址)、还有PC(程序计数器)和一些寄存器</strong></p>
-<h2 id="2、进程的状态和转换条件"><a href="#2、进程的状态和转换条件" class="headerlink" title="2、进程的状态和转换条件"></a>2、进程的状态和转换条件</h2><p>一次只有一个进程在处理器上可运行，多个进程可处于就绪或者等待状态</p>
+                <h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><p><strong>1、结合下图，说明什么是线程</strong></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113222556076.png"
+                      alt="image-20230113222556076" style="zoom: 67%;" 
+                >
+
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230111173147509.png"
-                      alt="image-20230111173147509"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113220943018.png"
+                      alt="image-20230113220943018"
                 ></p>
-<h2 id="3、PCB-Process-Control-Block"><a href="#3、PCB-Process-Control-Block" class="headerlink" title="3、PCB (Process Control Block)"></a>3、PCB (Process Control Block)</h2><p><strong>1、什么是PCB</strong></p>
-<p>是系统为了管理进程专门设计的数据结构，用来记录进程的<strong>外部特征</strong>，描述进程的运动变化过程。PCB是进程存在的唯一标志，操作系统通过PCB而感知进程的存在。</p>
-<p><strong>2、PCB包含的信息</strong></p>
-<p>进程状态、PC、寄存器、CPU调度信息、内存管理信息、IO状态信息等</p>
-<h2 id="4、进程的创建和撤销"><a href="#4、进程的创建和撤销" class="headerlink" title="4、进程的创建和撤销"></a>4、进程的创建和撤销</h2><p><strong>1、进程的创建</strong></p>
+<p><strong>2、为什么要引入线程</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230111184710254.png"
-                      alt="image-20230111184710254"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master//typora_imgs/image-20230113212542225.png"
+                      alt="image-20230113212542225"
                 ></p>
-<p><strong>2、进程的撤销</strong></p>
+<p><strong>3、比较进程和线程</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230111185346791.png"
-                      alt="image-20230111185346791"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master//typora_imgs/image-20230113213533334.png"
+                      alt="image-20230113213533334"
                 ></p>
-<h2 id="5、进程通信"><a href="#5、进程通信" class="headerlink" title="5、进程通信"></a>5、进程通信</h2><p><strong>1、进程协作的优点</strong></p>
+<p><strong>4、用户级线程与内核级线程的概念，以及他们的优缺点。</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/zihengqin-cs/images/master/typora_imgs/image-20230111190053084.png"
-                      alt="image-20230111190053084"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113222336995.png"
+                      alt="image-20230113222336995"
                 ></p>
+<p><strong>4、用户线程与核心线程之间有哪些映射模型？说明其原理及特点。</strong></p>
+<center class="half">    
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113221711756.png"
+                      width="300"
+                >    
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113230717056.png"
+                      width="300"
+                > 
+</center> 
+![](https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113230844855.png)
+
+<p><strong>一对一</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113231430224.png"
+                      alt="image-20230113231430224"
+                ></p>
+<center class="half">    
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113231730093.png"
+                      width="300"
+                >    
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113231823355.png"
+                      width="300"
+                > 
+</center> 
+
+
+
+<p><strong>多对多</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/zihengqin-cs/images@master/typora_imgs/image-20230113232310577.png"
+                      alt="image-20230113232310577"
+                ></p>
+<p><strong>二级模型</strong></p>
+<p>在多对多的基础上允许将一个用户线程绑定到某个内核线程上</p>
+<p><strong>5、根据映射模型，分析一些问题（如例题等）</strong></p>
+<p><strong>6、线程对进程资源的共享（pthread的几个例子）</strong></p>
 
             </div>
 
@@ -280,29 +334,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                            rel="prev"
-                            href="/2023/02/12/ch4%E7%BA%BF%E7%A8%8B/"
-                            >
-                                <span class="left arrow-icon flex-center">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </span>
-                                <span class="title flex-center">
-                                    <span class="post-nav-title-item">ch4线程</span>
-                                    <span class="post-nav-item">Prev posts</span>
-                                </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/2023/01/12/ch2%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"
+                            href="/2023/01/12/ch3%E8%BF%9B%E7%A8%8B/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">ch2操作系统结构</span>
+                                    <span class="post-nav-title-item">ch3进程</span>
                                     <span class="post-nav-item">Next posts</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">
@@ -322,7 +361,7 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E8%BF%9B%E7%A8%8B"><span class="nav-text">1、进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E5%92%8C%E8%BD%AC%E6%8D%A2%E6%9D%A1%E4%BB%B6"><span class="nav-text">2、进程的状态和转换条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81PCB-Process-Control-Block"><span class="nav-text">3、PCB (Process Control Block)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%92%A4%E9%94%80"><span class="nav-text">4、进程的创建和撤销</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="nav-text">5、进程通信</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B"><span class="nav-text">线程</span></a></li></ol>
     </div>
 </div>
             </div>
